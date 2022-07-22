@@ -1,0 +1,25 @@
+{% load static %}
+<!doctype html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>app-TOP</title>
+    <link rel="stylesheet" 
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+    crossorigin="anonymous">
+</head>
+
+<body class="container">
+    <h1 class="display-4 text-primary">app</h1>
+    <p>これはTOPページ（navタブ消した）</p>
+    <a href="{% url 'login' %}">ログイン</a>
+    <p>アカウントをお持ち出ない方はこちら。</p>
+    <a href="{% url 'user-register' %}">アカウントを作成</a>
+
+    <table class="table mt-3">
+    <tr><th>テーブルのタイトル行</th></tr>
+    
+    </table>
+</body>
+
+</html>

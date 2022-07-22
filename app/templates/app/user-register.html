@@ -1,0 +1,46 @@
+{% load static %}
+<!doctype html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>app-ユーザー登録</title>
+    <link rel="stylesheet" 
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+    crossorigin="anonymous">
+</head>
+
+<body class="container">
+    <form action="" method="post">
+        <p>これはユーザー登録ページ（navタブなし）</p>
+        <p>登録したらログインページに飛ぶようにする</p>
+        {% csrf_token %}
+        <div>
+        <h1 class="display-4 text-primary">アカウント登録</h1>
+        <dl>
+            <div>
+                <dt>アカウント名</dt>
+                <dt>{{ forms.username }}{{ forms.username.errors }}</dt>
+            </div>
+            <div>
+                <dt>メールアドレス</dt>
+                <dt>{{ form.email }}{{ form.email.errors }}</dt>
+            </div>
+            <div>
+                <dt>パスワード</dt>
+                <dt>{{ form.password }}{{ form.password.errors }}</dt>
+                <p>英数字を含む6文字以上の入力をお願いします。</p>
+            </div>
+            <div>
+                <dt> パスワード(確認)</dt>
+                <dt>{{ form.confirm_password }}{{ form.confirm_password.errors }}</dt>
+                <p>上記パスワードと同様のパスワードの入力をお願いします。</p>
+            </div>
+            <div>
+                <button type="submit"><i class="fa fa-plus" style="color:rgb(51, 171, 246);"></i> アカウントを登録する</button>
+            </div>
+        </dl>
+        </div>
+    </form>
+</body>
+
+</html>

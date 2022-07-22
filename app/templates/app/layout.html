@@ -1,0 +1,35 @@
+{% load static %}
+<!doctype html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" 
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+    crossorigin="anonymous">
+</head>
+<body class="container">
+    <!-- class="sticky-top"で画面トップに固定 -->
+    <nav class="navbar navbar-expand navbar-light bg-light sticky-top">
+    <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'index' %}">TOP(あとでマイページに変える)</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'search' %}">検索</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'register' %}">データ登録</a>
+        </li>
+    </ul>
+    </nav>
+    
+    <div>{% block header %}{% endblock %}</div>
+    <div class="content">{% block content %}{% endblock %}</div>
+
+    <div>
+        <span class="float-right">copyright 2022 
+            KANAE-Domon.</span>
+    </div>
+</body>
+</html>
